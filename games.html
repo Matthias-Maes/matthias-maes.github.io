@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Matthias Maes</title>
+    <link rel="icon" type="image/x-icon" href="Images/Personal/Picture2.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    #overlay-play {
+        display: none;
+    }
+    #overlay-group {
+        display: none; 
+        font-style: italic; 
+        color: #f4f4f4;
+    }
+</style>
+<body>
+    <div class="container">
+        <aside class="sidebar1">
+            <ul class="socials">
+                <li>
+                    <a href="https://www.linkedin.com/in/matthias-maes-57aa5b2b7/" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <img src="Images/Icons/linkedin.png" alt="LinkedIn">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/MM-13" title="GitHub" target="_blank" rel="noopener noreferrer">
+                    <img src="Images/Icons/github.png" alt="GitHub">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mm-13.itch.io/" title="Itch.io" target="_blank" rel="noopener noreferrer">
+                    <img src="Images/Icons/itchio.png" alt="Itch.io">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.gg/ED8ZrtPAnb" title="Discord" target="_blank" rel="noopener noreferrer">
+                    <img src="Images/Icons/discord.png" alt="Discord">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://sketchfab.com/matthiasmaes/models" title="Sketchfab" target="_blank" rel="noopener noreferrer">
+                    <img src="Images/Icons/sketchfab.png" alt="Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:maesmatthias@outlook.com" title="Email">
+                    <img src="Images/Icons/mail.png" alt="Email">
+                    </a>
+                </li>
+            </ul>
+            <div class="socials">
+                <button id="theme-toggle">
+                    <span id="icon" class="sunandmoon">&#9728;</span> <!-- sun icon --> 
+                </button>
+            </div>
+        </aside>
+        <aside class="sidebar">
+            <h1>Matthias Maes</h1>
+            <hr>
+            <ul>
+                <li><a href="index.html">Home.html</a></li>
+                <li class="active-tab"><a href="games.html" class="active-tab">Projects.html</a></li>
+                <li><a href="about.html">About_Me.html</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section>
+                <h2><span class="blue-text">Print: </span>"Projects"</h2>
+                <hr>
+                <h3><span class="blue-text">void </span>Game_Jam_&_Group_Projects</h3>
+                <div class="projects">
+                    <div class="project" id="project-image-6" onclick="openOverlay('project-image-6')">
+                        <h4>Café-CATastrophe</h4>
+                        <img class="project-image" src="Images/CC/cover.png" alt="Café-CATastrophe">
+                        <p>A couch co-op game where you either play as grandma trying to catch the cats and cleanup the café, or a cat having to destroy the cafe and not get caught!</p>
+                        <p>...</p>
+                    </div>
+                    <div class="project" id="project-image-1" onclick="openOverlay('project-image-1')">
+                        <h4>Bonkers for Loot</h4>
+                        <img class="project-image" src="Images/BonkersForLoot.png" alt="Bonkers for Loot">
+                        <p>A couch co-op game where you play as sliding penguins against each other to catch the most amount of fish. Fight for your fish or slide trying!</p>
+                        <p>...</p>
+                    </div>
+                    <div class="project" id="project-image-2" onclick="openOverlay('project-image-2')">
+                        <h4>Tides of Oblivion</h4>
+                        <img class="project-image" src="Images/TidesOfOblivion.png" alt="Tides of Oblivion">
+                        <p>Stranded on an island in the middle of nowhere with Mother Nature trying to kill you. Prepare for coming storms and find your way off the island!</p>
+                        <p>...</p>
+                    </div>                    
+                    <div class="project" id="project-image-3" onclick="openOverlay('project-image-3')">
+                        <h4>Smack 'n' Snatch</h4>
+                        <img class="project-image" src="Images/zYpPY2.png" alt="Smack 'n' Snatch">
+                        <p>You're a forest loner living away from civilisation. Defend against waves of squirrels stealing your items and hold out for as long as you can!</p>
+                        <p>...</p>
+                    </div>
+                </div>
+                <h3><span class="blue-text">void </span>Personal_Games</h3>
+                <div class="projects">
+                    <div class="project" id="project-image-4" onclick="openOverlay('project-image-4')">
+                        <h4>Asteroid Trap</h4>
+                        <img class="project-image-web" src="Images/AsteroidTrap.png" alt="Asteroid Trap">
+                        <p>A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends?</p>
+                        <p>...</p>
+                    </div>
+                    <div class="project" id="project-image-5" onclick="openOverlay('project-image-5')">
+                        <h4>Slither 'n' Chomp</h4>
+                        <img class="project-image-web" src="Images/SlithernChomp.png" alt="SlithernChomp">
+                        <p>A python Snake game where an enemy is trying to steal your food. Get the foost as fast as possible to not starve to death!</p>
+                        <p>...</p>
+                    </div>
+                </div>
+                <h3><span class="blue-text"">void </span>GitHub_Projects_&_Websites</h3>
+                <div class="projects">
+                    <div class="project" onclick="myFunction('https://github.com/MM-13/CloudZip')">
+                        <h4>CloudZIP</h4>
+                        <p>CloudZIP is one of my first python projects ever! A back-up tool that compresses a folder into a zip file and uploads it to google drive.</p>
+                        <br>
+                        <p><strong>Platform:</strong> Windows PC</p>
+                        <p><strong>Language:</strong> Python</p>
+                        <br>
+                        <p>Click to visit!</p>
+                        <!--<div class="project-footer">
+                            <a class="github"><button>GitHub - CloudZIP</button></a>
+                        </div>-->
+                    </div>
+                    <div class="project" onclick="myFunction('https://github.com/MM-13/SYTaDeL')">
+                        <h4>SYTaDeL</h4>
+                        <p>A tool made for downloading Spotify playlists via YouTube. I made it to help people download their playlists and listen to them offline.</p>
+                        <br>
+                        <p><strong>Platform:</strong> Windows PC</p>
+                        <p><strong>Language:</strong> Python</p>
+                        <br>
+                        <p>Click to visit!</p>
+                        <!--<div class="project-footer">
+                            <a class="github"><button>GitHub - SYTaDeL</button></a>
+                        </div>-->
+                    </div>                    
+                    <div class="project" onclick="myFunction('https://mm-13.github.io/CAP/')">
+                        <h4>Chaotic Art Productions Website</h4>
+                        <img class="project-image-web" src="Images/capfinal.png" alt="CAP">
+                        <p>This is the website I made for a group project where we had to make a fictional company.</p>
+                        <br>
+                        <p>Click to visit!</p>
+                    </div>
+                    <div class="project" onclick="myFunction('https://mm-13.github.io/Portfolio/')">
+                        <h4>Portfolio Website</h4>
+                        <img class="project-image-web" src="Images/Personal/Picture2.png" alt="Portfolio">
+                        <p>This is the website you're currently on!</p>
+                        <br>
+                        <p>Click to visit!</p>
+                    </div>
+                    <div class="project" onclick="myFunction('https://mm-13.github.io/HoloWisp')">
+                        <h4>HoloWisp Website</h4>
+                        <img class="project-image-web" src="Images/HoloWispLogo.png" alt="HoloWisp">
+                        <p>I made this simple website under 10 minutes.</p>
+                        <br>
+                        <p>Click to visit!</p>
+                    </div>
+                </div>
+                <h3><span class="blue-text">void </span>3D_Models_Extra</h3>
+                <div class="projects">
+                    <div class="project" onclick="myFunction('https://sketchfab.com/3d-models/f4u-corsair-moustachekart-17921d6e15744971ac0cc12b8826d1ca')">
+                        <h4>F4U Corsair MoustacheKart</h4>
+                        <div class="sketchfab">
+                            <iframe title="F4U Corsair MoustacheKart" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/17921d6e15744971ac0cc12b8826d1ca/embed?preload=1&ui_hint=0"></iframe> 
+                            <p>F4U Corsair MoustacheKart by Matthias Maes. Click here to visit!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="overlay" class="overlay">
+                    <div class="overlay-content">
+                        <span class="close" onclick="closeOverlay()">&times;</span>
+                        <h2 id="overlay-title"></h2>
+                        <div class="slider-container">
+                            <img id="overlay-slider-image" class="slider-image" src="" alt="">
+                            <video id="overlay-slider-video" class="slider-video" controls></video>
+                            <div class="slider-nav">
+                                <button id="prev" onclick="prevImage()">&#10094;</button>
+                                <button id="next" onclick="nextImage()">&#10095;</button>
+                            </div>
+                        </div>
+                        <p id="overlay-description"></p>
+                        <p id="overlay-uniqueness"></p>
+                        <p id="overlay-role"></p>
+                        <p><strong>Platform:</strong> <span id="overlay-platform"></span></p>
+                        <p><strong>Language:</strong> <span id="overlay-language"></span></p>
+                        <p id="overlay-group"></p>
+                        <div id="overlay-buttons">
+                            <a id="overlay-download" href="#" target="_blank"><button>Download</button></a>
+                            <a id="overlay-play" href="#" target="_blank"><button>Play</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Matthias Maes</p>
+        </footer>
+    </div>
+</body>
+</html>
+<script src="js/projectsData.js"></script>
+<script src="js/functionHandler.js"></script>

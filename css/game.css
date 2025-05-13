@@ -1,0 +1,36 @@
+/* Hide game by default */
+.hidden {
+    display: none;
+}
+
+/* Style for the canvas and the game display */
+#game-container {
+    background-color: #252526;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #d4d4d4;
+}
+
+canvas {
+    border: 2px solid #333;
+    background-color: #2d2d2d;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    color: #d4d4d4;
+    float: right;
+    font-size: 2rem; /* ~28px */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn,
+.close-btn:focus {
+    color: #569cd6;
+    text-decoration: none;
+}
