@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+<title>About - MM-13</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <nav class="menu">
+        <div class="container">
+            <a href="/index.html">
+                <img src="/images/favicon.png" alt="Favicon" class="favicon">
+            </a>
+            <div class="hamburger" onclick="toggleMenu()">
+                ☰
+            </div>
+            <ul id="menu-items">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/games.html">Games</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <button type="button" onclick="searchItems()">Search</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>About MM-13</h1>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>Who Am I</h2>
+            <p>I am MM-13. I am a student at the Digital Arts & Entertainment University of Belgium. I am passionate about making games and exploring new worlds. I love being creative and giving others the opportunities to be creative and do what they enjoy.</p>
+            
+            <h2>My Goals</h2>
+            <p>My goals are to start my own game studio and make fun to play games for both you and your friends. I want to share my passion for games with the community and enjoy making games.</p>
+            
+            <h2>What I Like</h2>
+            <p>I like to make games that are fun and easy to play, but I am passionate enough to get into bigger projects and explore higher levels of the gaming industry. I like seeing people do something they love and I think that those people working together, can make the best games you'll play.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MM-13. All rights reserved. <a href="https://github.com/MM-13">Github - MM-13</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    // Function to search through projects and games
+    function searchItems() {
+        let query = document.getElementById('searchInput').value.toLowerCase();
+        let projects = document.querySelectorAll('.project');
+        let games = document.querySelectorAll('.game');
+        
+        projects.forEach((project) => {
+            let title = project.querySelector('h3').textContent.toLowerCase();
+            project.style.display = title.includes(query) ? 'block' : 'none';
+        });
+
+        games.forEach((game) => {
+            let title = game.querySelector('h3').textContent.toLowerCase();
+            game.style.display = title.includes(query) ? 'block' : 'none';
+        });
+    }
+
+    // Function to toggle the menu on mobile
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        const menuItems = document.getElementById('menu-items');
+        
+        // Toggle the active class to show/hide the menu items
+        menu.classList.toggle('active');
+        
+        // Ensure menu items are shown/hidden based on the active class
+        if (menu.classList.contains('active')) {
+            menuItems.style.display = 'flex';
+        } else {
+            menuItems.style.display = 'none';
+        }
+    }
+
+    // Function to handle screen resize and reset menu state
+    function handleResize() {
+        const menu = document.querySelector('.menu');
+        const menuItems = document.getElementById('menu-items');
+        
+        if (window.innerWidth > 768) { // Adjust the breakpoint as necessary
+            menu.classList.remove('active'); // Remove active class
+            menuItems.style.display = 'flex'; // Show the menu items
+        } else {
+            menuItems.style.display = 'none'; // Hide menu items on small screens
+        }
+    }
+
+    // Add resize event listener
+    window.addEventListener('resize', handleResize);
+
+    // Initial check in case of a page load
+    handleResize();
+</script>
