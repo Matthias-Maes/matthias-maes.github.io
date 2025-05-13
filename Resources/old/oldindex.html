@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Matthias Maes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .game-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .code-section {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            height: 400px; /* Match the height of the canvas */
+            max-height: 400px; /* Ensure the code section doesn't overflow */
+            overflow-y: auto; /* Allow vertical scrolling if the code is too long */
+        }
+        canvas {
+            border: 2px solid #000;
+            display: block;
+        }
+        pre {
+            color: #008000;
+            background-color: #111111;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>Matthias Maes</h1>
+            <hr>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="games.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <section>
+                <h2>Hello, I'm a Game Developer!</h2>
+                <hr>
+                <p>Passionate game developer with a knack for creating immersive experiences.</p>
+            </section>
+
+            <section class="game-section">
+                <h3>Interactive Game Showcase</h3>
+                <canvas id="gameCanvas" width="400" height="400"></canvas>
+                <div id="controls">
+                    <label>Gravity: <input type="range" id="gravity" min="0" max="1" step="0.01" value="0.05"></label><br>
+                    <label>Ball Size: <input type="range" id="ballSize" min="10" max="50" step="1" value="20"></label><br>
+                    <label>Bounce Factor: <input type="range" id="bounce" min="0" max="1" step="0.01" value="0.7"></label><br>
+                </div>
+            </section>
+
+            <section class="code-section">
+                <h3>Code:</h3>
+                <pre>
+                    <code>
+                        const canvas = document.getElementById("gameCanvas");
+                        const ctx = canvas.getContext("2d");
+
+                        let gravity = 0.05;
+                        let ballSize = 20;
+                        let bounceFactor = 0.7;
+                        let ball = { x: canvas.width / 2, y: canvas.height / 2, radius: ballSize, dx: 2, dy: 2 };
+
+                        // Handle click event
+                        canvas.addEventListener("click", function(event) {
+                            // Calculate distance between mouse click and ball center
+                            const distance = Math.sqrt(Math.pow(event.offsetX - ball.x, 2) + Math.pow(event.offsetY - ball.y, 2));
+                            
+                            // If click is inside the ball, apply an upward force
+                            if (distance <= ball.radius) {
+                                ball.dy = -5; // Bounce the ball upwards
+                            }
+                        });
+
+                        function update() {
+                            ctx.clearRect(0, 0, canvas.width, canvas.height);
+                            ctx.beginPath();
+                            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+                            ctx.fillStyle = "#0095DD";
+                            ctx.fill();
+                            ctx.closePath();
+
+                            if (ball.y + ball.dy > canvas.height - ball.radius) {
+                                ball.dy = -ball.dy * bounceFactor;
+                            } else {
+                                ball.dy += gravity;
+                            }
+
+                            ball.x += ball.dx;
+                            ball.y += ball.dy;
+
+                            if (ball.x + ball.dx > canvas.width - ball.radius || ball.x + ball.dx < ball.radius) {
+                                ball.dx = -ball.dx;
+                            }
+
+                            requestAnimationFrame(update);
+                        }
+
+                        document.getElementById("gravity").addEventListener("input", (e) => { gravity = parseFloat(e.target.value); });
+                        document.getElementById("ballSize").addEventListener("input", (e) => { ballSize = parseInt(e.target.value); ball.radius = ballSize; });
+                        document.getElementById("bounce").addEventListener("input", (e) => { bounceFactor = parseFloat(e.target.value); });
+
+                        update();
+                    </code>
+                </pre>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Matthias Maes. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const canvas = document.getElementById("gameCanvas");
+            const ctx = canvas.getContext("2d");
+
+            let gravity = 0.05;
+            let ballSize = 20;
+            let bounceFactor = 0.7;
+            let ball = { x: canvas.width / 2, y: canvas.height / 2, radius: ballSize, dx: 2, dy: 2 };
+
+            // Handle click event
+            canvas.addEventListener("click", function(event) {
+                // Calculate distance between mouse click and ball center
+                const distance = Math.sqrt(Math.pow(event.offsetX - ball.x, 2) + Math.pow(event.offsetY - ball.y, 2));
+                
+                // If click is inside the ball, apply an upward force
+                if (distance <= ball.radius) {
+                    ball.dy = -5; // Bounce the ball upwards
+                }
+            });
+
+            function update() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+                ctx.fillStyle = "#0095DD";
+                ctx.fill();
+                ctx.closePath();
+
+                if (ball.y + ball.dy > canvas.height - ball.radius) {
+                    ball.dy = -ball.dy * bounceFactor;
+                } else {
+                    ball.dy += gravity;
+                }
+
+                ball.x += ball.dx;
+                ball.y += ball.dy;
+
+                if (ball.x + ball.dx > canvas.width - ball.radius || ball.x + ball.dx < ball.radius) {
+                    ball.dx = -ball.dx;
+                }
+
+                requestAnimationFrame(update);
+            }
+
+            document.getElementById("gravity").addEventListener("input", (e) => { gravity = parseFloat(e.target.value); });
+            document.getElementById("ballSize").addEventListener("input", (e) => { ballSize = parseInt(e.target.value); ball.radius = ballSize; });
+            document.getElementById("bounce").addEventListener("input", (e) => { bounceFactor = parseFloat(e.target.value); });
+
+            update();
+        });
+    </script>
+</body>
+</html>

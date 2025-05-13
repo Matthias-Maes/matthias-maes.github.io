@@ -1,0 +1,53 @@
+[
+    {
+        "id": "project-image-1",
+        "title": "Bonkers for Loot",
+        "description": "A couch co-op game where you play as sliding penguins against each other to catch the most amount of fish. Fight for your fish or slide trying!",
+        "image": "Images/BonkersForLoot.png",
+        "platform": "Windows / PC",
+        "language": "Unity / C#",
+        "downloadLink": "https://scuttsy.itch.io/bonkers-for-loot",
+        "group": true
+    },
+    {
+        "id": "project-image-2",
+        "title": "Tides of Oblivion",
+        "description": "Stranded on an island in the middle of nowhere with Mother Nature trying to kill you. Prepare for coming storms and find your way off the island!",
+        "image": "Images/TidesOfOblivion.png",
+        "platform": "Windows / PC",
+        "language": "Unity / C#",
+        "downloadLink": "https://mm-13.itch.io/tides-of-oblivion",
+        "group": true
+    },
+    {
+        "id": "project-image-3",
+        "title": "Smack 'n' Snatch",
+        "description": "You're a forest loner living away from civilisation. Defend against waves of squirrels stealing your items and hold out for as long as you can!",
+        "image": "Images/zYpPY2.png",
+        "platform": "Windows / PC",
+        "language": "MonoGame / C#",
+        "downloadLink": "https://mm-13.itch.io/smack-n-snatch",
+        "group": true
+    },
+    {
+        "id": "project-image-4",
+        "title": "Asteroid Trap",
+        "description": "A simple space shooter game, but why don't you see who can get the highest score... You or one of your friends?",
+        "image": "Images/AsteroidTrap.png",
+        "platform": "Windows / PC",
+        "language": "MonoGame / C#",
+        "downloadLink": "https://mm-13.itch.io/asteroid-trap",
+        "group": false
+    },
+    {
+        "id": "project-image-5",
+        "title": "Slither 'n' Chomp",
+        "description": "A python Snake game where an enemy is trying to steal your food. Get the foost as fast as possible to not starve to death!",
+        "image": "Images/SlithernChomp.png",
+        "platform": "Windows / PC / Web",
+        "language": "Python",
+        "downloadLink": "https://mm-13.itch.io/slither-n-chomp",
+        "playLink": "https://mm-13.github.io/Slither-'n-Chomp/build/web/index.html",
+        "group": false
+    }
+]
